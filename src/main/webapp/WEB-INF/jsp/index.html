@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" />
+
+
+<title>My chart.js Chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        let mychart = document.getElementById('myChart').getContext('2d');
+
+        //Global Options
+        Chart.defaults.global.defaultFontFamily = 'Michroma';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = 'green';
+
+
+        let massPopChart = new Chart(myChart, {
+            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday'
+                ],
+                datasets: [{
+                        label: 'Calories',
+                        data: [
+                            1,
+                            3,
+                            2,
+                            4,
+                            3,
+                            5,
+                            6
+                        ],
+                        backgroundColor: [
+                            'green',
+                        ],
+                        borderWidth: 1,
+                        borderColor: '#777',
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#fff'
+                    }, {
+                        label: 'Target Calorie Intake',
+                        data: [
+                            4,
+                            4,
+                            4,
+                            4,
+                            4,
+                            4,
+                            4,
+                        ],
+                        backgroundColor: 'pink',
+                        borderWidth: 1,
+                        borderColor: '#000',
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Sample Chart',
+                    fontSize: 25
+                },
+                legend: {
+                    display: true,
+                    position: 'left',
+                    labels: {
+                        fontColor: 'black'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 50,
+                        bottom: 0,
+                        top: 25
+                    }
+                },
+                tooltips: {
+                    display: false
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

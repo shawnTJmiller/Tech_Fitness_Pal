@@ -1,0 +1,34 @@
+				_________________________
+				| app_user		|		
+_________________________	|   id (pk)		|		_________________________
+| 			|	|   user_name (fk)	|		| user_data		|
+|   			|__  \__|   password		|_______________|   id (pk,fk)		|
+|   			|  \	|   role		|		|   app_id (pk,fk)	|
+|   			|	|   salt		|		|_______________________|
+|   			|	|_______________________|			|
+|   			|		|					|
+|  			|	________|________________			|
+|   			|	| info			|			|
+|_______________________|	|   user_name (pk)	|			|
+				|   email		|		________|________________
+				|   first_name		|		| api_data		|
+				|   last_name		|		|   app_id (pk,op)	|
+				|   gender		|		|   app_key (op)	| 
+				|   birthdate		|		|   ingr		| <-- primary means of food search
+				|   height		|		|   upc	[n]		| <-- for mobile upc scan / entry
+				|   weight		|		|   nutrition_type [n]	| <-- carb/fiber/chol/fat/vit/min
+				|   lose_wt		|		|   health [n]		| <-- <type>-free foods
+				|   maintain_wt		|		|   calories [n]	|
+				|   gain_wt		|		|   category [n]	| <-- bFast/lunch/dinner/snack
+				|   target_wt		|		|   category_label [n]	| <-- foodItem/meal
+									|   meal_date		|
+				|_______________________|		|_______________________|
+
+_________________________
+|	   KEY		|
+|=======================|
+| pk = primary key	|
+| fk = foreign key	|
+| op = ordered pair	|
+|  n = null value OK	|
+|_______________________|
